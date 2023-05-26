@@ -31,19 +31,24 @@ public class FreizeitparkAutomat {
 		ACHTERBAHN{
 			
 			@Override
-			FreizeitparkState performAction(Action action) {
-				if(action == Action.ABBRUCH) {
-					return WARTEN;
-				}else if(action == Action.EURO1) {
-					helper.printTicket(CardType.ACHTERBAHN);
-					return WARTEN;
-				}else if(action == Action.CENT50) {
-					return A50;
-				}else if(action == Action.EXTRARUNDE) {
-					return EXTRARUNDE;
-				}else {
-					return ACHTERBAHN;
-				}
+			FreizeitparkState performAction(Action action) {				
+				return switch(action) {
+					case ABBRUCH -> {
+						yield WARTEN;
+					}
+					case EURO1 -> {
+						helper.printTicket(CardType.ACHTERBAHN); yield WARTEN;
+					}
+					case CENT50 -> {
+						yield A50;
+					}
+					case EXTRARUNDE -> {
+						yield EXTRARUNDE;
+					}
+					default -> {
+						yield ACHTERBAHN;
+					}
+				};
 			}
 			
 		},
