@@ -1,4 +1,4 @@
-package de.eberln.swe.ab2.mvc;
+package de.eberln.swe.ab3;
 
 public class Controller {
 

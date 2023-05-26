@@ -1,6 +1,6 @@
 package de.eberln.swe.ab2;
 
-import de.eberln.swe.ab2.mvc.Controller;
+import de.eberln.swe.ab3.Controller;
 
 public class Main {
 	
@@ -19,8 +19,6 @@ public class Main {
 		
 		String test4 = "-";
 		System.out.println(automat.isValid(test4));
-		
-		Controller c = new Controller();
 		
 	}
 	
